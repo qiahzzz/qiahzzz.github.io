@@ -25,9 +25,7 @@
     <main>
       <section class="profile" id="about">
         <aside>
-          <div class="photo-placeholder" aria-label="Qiahao Zheng">
-            <span>QZ</span>
-          </div>
+          <img class="profile-photo" src="profile.jpg" alt="Qiahao Zheng" />
           <h1>Qiahao Zheng</h1>
           <p class="chinese-name">郑洽好</p>
           <p>Ph.D. Student</p>
@@ -60,10 +58,12 @@
 
           <h2>Research Interests</h2>
           <ul class="interests">
-            <li>Generative Models and Vision-Language Models</li>
-            <li>Artificial Intelligence for Finance</li>
-            <li>Game Theory and Reinforcement Learning</li>
-            <li>Insurance, Risk Sharing, and Partial Information</li>
+            <li>
+              <strong>Generative Models:</strong> focus on large language
+              models and diffusion models
+            </li>
+            <li><strong>AI for Finance</strong></li>
+            <li><strong>Game Theory and Insurance</strong></li>
           </ul>
         </div>
       </section>
@@ -74,11 +74,8 @@
         <article class="publication">
           <h3>Variational Co-Evolution via Reinforcement Learning</h3>
           <p class="authors">
-            <strong>Qiahao Zheng</strong>, Hancong Jin, Junbo Niu,
-            <details class="more-authors">
-              <summary>and 3 more authors</summary>
-              <span>Yinjie Wang, Wentao Zhang, and Ruixun Zhang</span>
-            </details>
+            <strong>Qiahao Zheng</strong>, Hancong Jin, Junbo Niu, Yinjie Wang,
+            Wentao Zhang, and Ruixun Zhang
           </p>
           <p class="venue">COLM 2026</p>
           <p class="paper-links">
@@ -97,11 +94,8 @@
             Ambiguity Aversion
           </h3>
           <p class="authors">
-            <strong>Qiahao Zheng</strong>, Lin Xie,
-            <details class="more-authors">
-              <summary>and 3 more authors</summary>
-              <span>Danping Li, Chao Shi, and Ruixun Zhang</span>
-            </details>
+            <strong>Qiahao Zheng</strong>, Lin Xie, Danping Li, Chao Shi, and
+            Ruixun Zhang
           </p>
           <p class="venue">Under Review</p>
         </article>
@@ -113,14 +107,18 @@
           </h3>
           <p class="authors">
             Junbo Niu, Yuanhong Zheng, Ziyang Miao,
-            <details class="more-authors">
-              <summary>and 8 more authors</summary>
-              <span
-                >Hejun Dong, Chunjiang Ge, Hao Liang, Ma Lu, Bohan Zeng,
-                <strong>Qiahao Zheng</strong>, Conghui He, and Wentao
-                Zhang</span
-              >
-            </details>
+            <span id="cvpr-more-authors" hidden
+              >Hejun Dong, Chunjiang Ge, Hao Liang, Ma Lu, Bohan Zeng,
+              <strong>Qiahao Zheng</strong>, Conghui He, and Wentao Zhang,
+            </span>
+            <button
+              class="authors-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="cvpr-more-authors"
+            >
+              show more authors
+            </button>
           </p>
           <p class="venue">CVPR 2026</p>
           <p class="paper-links">
@@ -145,13 +143,8 @@
             Information
           </h3>
           <p class="authors">
-            Lin Xie, Danping Li,
-            <details class="more-authors">
-              <summary>and 3 more authors</summary>
-              <span
-                >Chao Shi, Ruixun Zhang, and <strong>Qiahao Zheng</strong></span
-              >
-            </details>
+            Lin Xie, Danping Li, Chao Shi, Ruixun Zhang, and
+            <strong>Qiahao Zheng</strong>
           </p>
           <p class="venue">Under Review</p>
         </article>
@@ -172,7 +165,7 @@
           <div>
             <h3>University of Science and Technology of China</h3>
             <p>B.S. in Mathematics, School of the Gifted Young</p>
-            <p>Concentration: Probability and Statistics</p>
+            <p>Probability and Statistics Track</p>
           </div>
         </div>
       </section>
@@ -182,5 +175,18 @@
       © 2026 Qiahao Zheng. Hosted by
       <a href="https://pages.github.com/">GitHub Pages</a>.
     </footer>
+    <script>
+      const authorsToggle = document.querySelector(".authors-toggle");
+      const moreAuthors = document.getElementById("cvpr-more-authors");
+
+      authorsToggle.addEventListener("click", () => {
+        const isExpanded = authorsToggle.getAttribute("aria-expanded") === "true";
+        authorsToggle.setAttribute("aria-expanded", String(!isExpanded));
+        moreAuthors.hidden = isExpanded;
+        authorsToggle.textContent = isExpanded
+          ? "show more authors"
+          : "show less authors";
+      });
+    </script>
   </body>
 </html>
