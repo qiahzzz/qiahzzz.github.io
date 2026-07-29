@@ -90,17 +90,12 @@ aside {
   text-align: center;
 }
 
-.photo-placeholder {
-  align-items: center;
-  background: var(--soft);
+.profile-photo {
   border-radius: 4px;
-  color: #66717c;
-  display: flex;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 56px;
+  display: block;
   height: 235px;
-  justify-content: center;
   margin-bottom: 18px;
+  object-fit: cover;
   width: 100%;
 }
 
@@ -208,30 +203,20 @@ h2 {
   margin-bottom: 2px !important;
 }
 
-.more-authors {
-  display: inline;
-}
-
-.more-authors summary {
+.authors-toggle {
+  background: none;
+  border: 0;
   color: #999;
   cursor: pointer;
-  display: inline;
-  list-style: none;
+  font: inherit;
+  padding: 0;
   text-decoration: underline;
   text-decoration-color: #ccc;
   text-underline-offset: 2px;
 }
 
-.more-authors summary::-webkit-details-marker {
-  display: none;
-}
-
-.more-authors[open] summary {
-  display: none;
-}
-
-.more-authors span {
-  color: var(--text);
+.authors-toggle:hover {
+  color: var(--link);
 }
 
 .education-item {
@@ -286,7 +271,7 @@ footer {
     text-align: left;
   }
 
-  .photo-placeholder {
+  .profile-photo {
     height: 210px;
     width: 185px;
   }
